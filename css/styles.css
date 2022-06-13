@@ -39,6 +39,19 @@ body {
     color: var(--accent-color);
 }
 
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
 /*=========COMPONENTS=========*/
 .container {
     width: 1200px;
@@ -432,7 +445,7 @@ body {
 
 /*=========FOOTER=========*/
 .footer {
-    background: #2F303A;
+    background-color: #2F303A;
     padding-top: 60px;
     padding-bottom: 60px;
 }
@@ -473,7 +486,11 @@ body {
     color: rgba(255, 255, 255, 0.6);
 }
 
-.social-footer-header {
+.social-footer {
+    margin-right: 93px;
+}
+
+.footer-header {
     margin-bottom: 20px;
 
     font-weight: 700;
@@ -518,6 +535,58 @@ body {
 .social-footer-link:hover .social-footer-icon,
 .social-footer-link:focus .social-footer-icon {
     fill: #fff;
+}
+
+.footer-subscription-form {
+    display: inline-block;
+}
+
+.footer-subscription-input {
+    width: 358px;
+    height: 50px;
+    padding: 16px;
+    margin-right: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    background-color: #2F303A;
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-subscription-input:focus {
+    outline: none;
+    border: 1px solid var(--brand-color);
+}
+
+.footer-subscription-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 200px;
+    height: 50px;
+    background-color: var(--brand-color);
+    border-radius: 4px;
+    border: 0;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-subscription-btn-span {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.88;
+    letter-spacing: 0.06em;
+    color: #FFFFFF;
+}
+
+.subscription-icon {
+    margin-left: 10px;
+    fill: #fff;
+}
+
+.footer-subscription-btn:hover,
+.footer-subscription-btn:focus {
+    background-color: #188CE8;
+    cursor: pointer;
 }
 
 /*=========PORTFOLIO=========*/
@@ -635,6 +704,7 @@ body {
 }
 
 /*=========BACKDROP=========*/
+
 .backdrop {
     position: fixed;
     top: 0;
@@ -651,7 +721,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 528px;
-    height: 581px;
+    padding: 40px;
     background-color: #fff;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
@@ -682,4 +752,151 @@ body {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
+}
+
+/*=========CONTACT MODAL FORM=========*/
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form-appeal {
+    margin-bottom: 12px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.15;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: var(--accent-color);
+}
+
+.contact-form-field {
+    margin-bottom: 20px;
+}
+
+.contact-form-field-wrapper {
+    position: relative;
+    margin-top: 4px;
+}
+
+.contact-form-field-span {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.01em;
+    color: var(--text-color);
+}
+
+.contact-form-input {
+    width: 100%;
+    height: 40px;
+    padding-left: 42px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),;
+}
+
+.contact-form-input:focus {
+    outline: none;
+    border-color: var(--brand-color);
+}
+
+.contact-form-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    fill: var(--accent-color);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-form-input:focus + .contact-form-icon {
+    fill: var(--brand-color);
+}
+
+.contact-form-message {
+    width: 100%;
+    height: 120px;
+    padding: 12px 16px;
+    margin-top: 4px;
+    resize: none;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-form-message:focus {
+    outline: none;
+    border-color: var(--brand-color);
+}
+
+.contact-form-checkbox-label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+    color: var(--text-color);
+}
+
+.contact-form-checkbox-link {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+    text-decoration-line: underline;
+    color: var(--brand-color);
+}
+
+.contact-form-checkbox-label::before {
+    display: block;
+    width: 16px;
+    height: 15px;
+    margin-left: 14px;
+    margin-right: 7px;
+    border: 1px solid var(--accent-color);
+    border-radius: 2px;
+    cursor: pointer;
+    content: '';
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), background-image 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-form-checkbox:checked + .contact-form-checkbox-label::before {
+    background-color: var(--brand-color);
+    background-image: url(../images/checkmark.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 0;
+}
+
+.contact-form-checkbox:focus + .contact-form-checkbox-label::before {
+    border: 1px solid var(--brand-color);
+}
+
+.contact-form-btn {
+    min-width: 200px;
+    height: 50px;
+    align-self: center;
+    border: 0;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.88;
+    letter-spacing: 0.06em;
+    color: #fff;
+    background-color: var(--brand-color);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.contact-form-btn:hover,
+.contact-form-btn:focus {
+        background-color: #188CE8;
+        cursor: pointer;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
