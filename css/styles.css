@@ -773,12 +773,8 @@ body {
   color: var(--accent-color);
 }
 
-.contact-form-field-wrapper {
+.contact-form-field {
   position: relative;
-  display: block;
-}
-
-.contact-form-field-span {
   display: block;
   margin-bottom: 4px;
   font-weight: 400;
@@ -807,8 +803,8 @@ body {
 .contact-form-icon {
   position: absolute;
   left: 12px;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 53%;
+  transform: translateY(-53%);
   width: 18px;
   height: 18px;
   fill: var(--accent-color);
